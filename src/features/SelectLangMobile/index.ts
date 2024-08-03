@@ -1,0 +1,1 @@
+export { SelectLangMobile } from './ui/SelectLangMobile.tsx'

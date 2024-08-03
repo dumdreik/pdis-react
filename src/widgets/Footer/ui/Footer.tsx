@@ -1,6 +1,29 @@
 import {Images} from "../../../shared/Image";
+import {Copy} from "../../../shared/Copy";
+import {Politics} from "../../../shared/Politics";
+import {Developers} from "../../../shared/Developers";
+import {LinkPhone} from "../../../shared/LinkPhone";
+import {LinkEmail} from "../../../shared/LinkEmail";
+import {Address} from "../../../shared/Address";
+import {Menu} from "../../../shared/Menu/ui/Menu.tsx";
+
+interface MenuItem {
+    id:number,
+    link:string,
+    name:string,
+}
 
 export const Footer = () => {
+    const Items:MenuItem[] = [
+        {id: 1, link:"/projects/", name:"Проекты"},
+        {id: 2, link:"/about/", name:"О компании"},
+        {id: 3, link:"/contacts/", name:"Контакты"},
+    ];
+    const SocItems:MenuItem[] = [
+        {id: 1, link:"#", name:"ВКонтакте"},
+        {id: 2, link:"#", name:"Телеграм"},
+        {id: 3, link:"#", name:"YouTube"},
+    ]
     return (
         <div className="footer">
             <div className="section_wrap">
@@ -12,36 +35,34 @@ export const Footer = () => {
                     </div>
                     <div className="footer_top_right">
                         <div className="footer_top_menu">
-                            <ul>
-                                <li><a href="#">О компании</a></li>
-                                <li><a href="#">Проекты</a></li>
-                                <li><a href="#">Контакты</a></li>
-                            </ul>
+                            <Menu Items={Items}/>
                         </div>
                         <div className="footer_top_soc">
-                            <ul>
-                                <li><a href="#">ВКонтакте</a></li>
-                                <li><a href="#">Телеграм</a></li>
-                                <li><a href="#">YouTube</a></li>
-                            </ul>
+                            <Menu Items={SocItems}/>
                         </div>
                         <div className="footer_top_contacts">
                             <div className="footer_top_contact">
-                                Москва, Кутузовский проспект, 1/7
+                                <Address/>
                             </div>
                             <div className="footer_top_contact">
-                                <a href="tel:+7 499 322 35 17">+7 499 322 35 17</a>
+                                <LinkPhone phone={"+7 499 322 35 17"}/>
                             </div>
                             <div className="footer_top_contact">
-                                <a href="mailto:info@point-design.ru">info@point-design.ru</a>
+                                <LinkEmail mail={"info@point-design.ru"}/>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="footer_bottom">
-                    <div className="footer_bottom_block">©Pointdesign</div>
-                    <div className="footer_bottom_block"><a href="#">Политика конфиденциальности</a></div>
-                    <div className="footer_bottom_block"><a href="#">Разработано в deus</a></div>
+                    <div className="footer_bottom_block">
+                        <Copy/>
+                    </div>
+                    <div className="footer_bottom_block">
+                        <Politics/>
+                    </div>
+                    <div className="footer_bottom_block">
+                        <Developers/>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,1 @@
+export { LinkEmail } from './ui/LinkEmail.tsx'
