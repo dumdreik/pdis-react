@@ -1,3 +1,5 @@
+import {Images} from "../../../shared/Image";
+
 export const Footer = () => {
     return (
         <div className="footer">
@@ -5,7 +7,7 @@ export const Footer = () => {
                 <div className="footer_top">
                     <div className="footer_top_left">
                         <div className="footer_logo">
-                            <img src="./img/footer_logo.svg" alt=""/>
+                            <img src={Images.LogoFooter} alt=""/>
                         </div>
                     </div>
                     <div className="footer_top_right">

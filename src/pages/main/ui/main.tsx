@@ -1,3 +1,4 @@
+import {Images} from "../../../shared/Image";
 import './main.scss'
 
 export const Main = () => {
@@ -10,7 +11,7 @@ export const Main = () => {
                     </div>
                     <div className="about_us_content">
                         <div className="about_us_left">
-                            <img src="./img/about.png" alt=""/>
+                            <img src={Images.MainAbout} alt=""/>
                         </div>
                         <div className="about_us_right">
                             <div className="about_us_right_top">
@@ -51,7 +52,7 @@ export const Main = () => {
                 <div className="section_wrap">
                     <div className="main_quote_wrap">
                         <div className="main_quote_photo">
-                            <img className="round" src="./img/person_round.png" alt=""/>
+                            <img className="round" src={Images.PersonRound} alt=""/>
                         </div>
                         <div className="main_quote_text">«Дизайн — это эволюция, и наша студия развивается, благодаря вам. Наше внимание к деталям и понимание того, как живут люди, — ключ к успеху вашего дизайна»</div>
                         <div className="main_quote_name">Наталья Гринфелд</div>
