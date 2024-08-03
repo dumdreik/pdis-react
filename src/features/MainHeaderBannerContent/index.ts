@@ -1,0 +1,1 @@
+export { MainHeaderBannerContent } from './ui/MainHeaderBannerContent.tsx'

@@ -1,0 +1,1 @@
+export { MainQuote } from './ui/MainQuote.tsx'

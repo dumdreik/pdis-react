@@ -1,0 +1,1 @@
+export { LinkPhone } from './ui/LinkPhone.tsx'

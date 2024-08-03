@@ -1,0 +1,1 @@
+export { AboutTeam } from './ui/AboutTeam.tsx'
