@@ -7,23 +7,7 @@ import {LinkEmail} from "../../../shared/LinkEmail";
 import {Address} from "../../../shared/Address";
 import {Menu} from "../../../shared/Menu/ui/Menu.tsx";
 
-interface MenuItem {
-    id:number,
-    link:string,
-    name:string,
-}
-
 export const Footer = () => {
-    const Items:MenuItem[] = [
-        {id: 1, link:"/projects/", name:"Проекты"},
-        {id: 2, link:"/about/", name:"О компании"},
-        {id: 3, link:"/contacts/", name:"Контакты"},
-    ];
-    const SocItems:MenuItem[] = [
-        {id: 1, link:"#", name:"ВКонтакте"},
-        {id: 2, link:"#", name:"Телеграм"},
-        {id: 3, link:"#", name:"YouTube"},
-    ]
     return (
         <div className="footer">
             <div className="section_wrap">
@@ -35,20 +19,20 @@ export const Footer = () => {
                     </div>
                     <div className="footer_top_right">
                         <div className="footer_top_menu">
-                            <Menu Items={Items}/>
+                            <Menu typeMenu={"footer"}/>
                         </div>
                         <div className="footer_top_soc">
-                            <Menu Items={SocItems}/>
+                            <Menu typeMenu={"soc"}/>
                         </div>
                         <div className="footer_top_contacts">
                             <div className="footer_top_contact">
                                 <Address/>
                             </div>
                             <div className="footer_top_contact">
-                                <LinkPhone phone={"+7 499 322 35 17"}/>
+                                <LinkPhone/>
                             </div>
                             <div className="footer_top_contact">
-                                <LinkEmail mail={"info@point-design.ru"}/>
+                                <LinkEmail/>
                             </div>
                         </div>
                     </div>

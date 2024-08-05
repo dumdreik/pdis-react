@@ -1,18 +1,7 @@
 import {Images} from "../../../shared/Image";
 import {AboutAdvantage} from "../../../features/AboutAdvantages/ui/AboutAdvantage.tsx";
 
-interface IAdvantage {
-    id:number,
-    title:string,
-    text:string,
-}
-
 export const MainAbout = () => {
-    const Items:IAdvantage[] = [
-        {id: 1, title:"10 лет", text:"бюро Point Design"},
-        {id: 2, title:"50 000 м2", text:"общая площадь объектов"},
-        {id: 3, title:"85 проектов", text:"созданных для клиентов"},
-    ]
     return (
         <section className="about_us dark_text">
             <div className="section_wrap">
@@ -39,7 +28,7 @@ export const MainAbout = () => {
                                 </div>
                             </div>
                         </div>
-                        <AboutAdvantage Items={Items}/>
+                        <AboutAdvantage/>
                     </div>
                 </div>
             </div>

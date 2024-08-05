@@ -14,7 +14,6 @@ export const AppRouter = () => {
             <Route
                 path='/'
                 element={<LayoutMain />}
-                //errorElement={<Fallback />}
             >
                 <Route index element={<Main />} />
             </Route>

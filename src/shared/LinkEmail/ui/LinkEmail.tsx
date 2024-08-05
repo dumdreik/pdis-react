@@ -1,9 +1,8 @@
 import React from "react";
-type IEmail = {
-    mail:string,
-}
-export const LinkEmail = ({mail}:IEmail) => {
+import {email} from "../model/db.tsx";
+
+export const LinkEmail = () => {
     return (
-        <a href={`mailto:${mail}`}>{mail}</a>
+        <a href={`mailto:${email()}`}>{email()}</a>
     )
 }

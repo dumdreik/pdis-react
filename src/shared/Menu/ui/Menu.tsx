@@ -1,16 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {menuItems} from "../model/db.tsx";
 
-interface Item {
-    id:number,
-    link:string,
-    name:string,
+interface ITypeMenu {
+    typeMenu:"header"|"footer"|"soc"
 }
-
-export const Menu:React.FC<{Items:Item[]}> = ({Items}) => {
+export const Menu = ({typeMenu}:ITypeMenu) => {
     return (
         <ul>
-            {Items.map((item:Item)=>{
+            {menuItems(typeMenu).map((item)=>{
                 return <li key={item.id}>
                     <Link to={item.link}>
                         {item.name}

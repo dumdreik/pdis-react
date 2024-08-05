@@ -1,6 +1,8 @@
-import {Images} from "../../../shared/Image.ts";
+import {ProjectCart} from "../../../features/ProjectCart";
+import {projectCarts} from "../../../features/ProjectCart/model/db.tsx";
 
 export const ProjectsList = () => {
+    const projects = projectCarts().slice(0, 10);
     return (
         <section className="projects dark_text single_page">
             <div className="section_wrap">
@@ -8,126 +10,11 @@ export const ProjectsList = () => {
                     Проекты
                 </h1>
                 <div className="projects_items">
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
-                    <a className="projects_item" href="">
-                        <div className="projects_item_pic">
-                            <img src={Images.Project1} alt=""/>
-                        </div>
-                        <div className="projects_item_name">
-                            Шервуд
-                        </div>
-                    </a>
+                    {projects.map((item,index) => {
+                        return(
+                            <ProjectCart key={`item_${index}`} id={item.id} previewImage={item.previewImage} name={item.name}/>
+                        )
+                    })}
                 </div>
                 <div className="pagination">
                     <div className="pagination_wrap">

@@ -1,9 +1,7 @@
 import React from "react";
-type PhoneNumber = {
-    phone:string,
-}
-export const LinkPhone = ({phone}:PhoneNumber) => {
+import {phone} from "../model/db.tsx";
+export const LinkPhone = () => {
     return (
-        <a href={`tel:${phone.split(' ').join('')}`}>{phone}</a>
+        <a href={`tel:${phone().split(' ').join('')}`}>{phone()}</a>
     )
 }

@@ -1,4 +1,5 @@
-import {Images} from "../../../shared/Image";
+import {groupItems} from "../model/db.tsx";
+import {GroupCart} from "../../../features/GroupCart";
 
 export const MainGroup = () => {
     return (
@@ -8,28 +9,11 @@ export const MainGroup = () => {
                     Группа компаний
                 </div>
                 <div className="group_items">
-                    <a className="group_item" href="">
-                        <div className="group_item_pic">
-                            <img src={Images.Group1} alt=""/>
-                        </div>
-                        <div className="group_item_name">
-                            Point Estate
-                        </div>
-                        <div className="group_item_desc">
-                            Покупка и продажа элитной недвижимости
-                        </div>
-                    </a>
-                    <a className="group_item" href="">
-                        <div className="group_item_pic">
-                            <img src={Images.Group2} alt=""/>
-                        </div>
-                        <div className="group_item_name">
-                            Point Woodcraft
-                        </div>
-                        <div className="group_item_desc">
-                            Производство эксклюзивной мебели из дерева
-                        </div>
-                    </a>
+                    {groupItems().map((item,index) => {
+                        return(
+                            <GroupCart key={`item_${index}`} name={item.name} description={item.description} id={item.id} image={item.image}/>
+                        )
+                    })}
                 </div>
             </div>
         </section>

@@ -318,7 +318,7 @@ img.round{
     max-height: 458px;
 }
 .projects_item:nth-child(5n+4),.projects_item:nth-child(5n+5){
-    flex: 1 1 49%;
+    flex: 1 1 48%;
 }
 .group_item_pic{
     border-bottom: 1px solid #CDC9C1;
