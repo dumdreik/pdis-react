@@ -1,5 +1,5 @@
-import {Images} from "../../../shared/Image";
-import {AboutAdvantage} from "../../../features/AboutAdvantages/ui/AboutAdvantage.tsx";
+import {Images} from "shared/Image";
+import {AboutAdvantage} from "features/AboutAdvantages";
 
 export const MainAbout = () => {
     return (

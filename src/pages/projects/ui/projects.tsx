@@ -3,6 +3,6 @@ import {ProjectsList} from "../../../widgets/ProjectsList";
 
 export const Projects = () => {
     return (
-        <ProjectsList/>
+        <ProjectsList itemsPerPage={1}/>
     )
 }

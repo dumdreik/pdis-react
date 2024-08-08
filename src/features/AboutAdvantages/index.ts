@@ -1,1 +1,1 @@
-export { LinkLogoSVG } from './ui/AboutAdvantage.tsx'
+export { AboutAdvantage } from './ui/AboutAdvantage.tsx'

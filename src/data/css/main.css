@@ -320,6 +320,17 @@ img.round{
 .projects_item:nth-child(5n+4),.projects_item:nth-child(5n+5){
     flex: 1 1 48%;
 }
+.pagination li{
+    list-style: none;
+}
+.pagination_number.active a{
+    color:white;
+}
+.pagination_arrow a{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+}
 .group_item_pic{
     border-bottom: 1px solid #CDC9C1;
     padding-bottom: 20px;
