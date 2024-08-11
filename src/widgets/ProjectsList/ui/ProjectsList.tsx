@@ -10,12 +10,17 @@ interface IItemsPerPage{
 export const ProjectsList = ({itemsPerPage}:IItemsPerPage) => {
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
-    const currentItems = projectCarts().slice(itemOffset, endOffset);
+    //const currentItems = projectCarts().slice(itemOffset, endOffset);
+    const [currentItems, setCurrentItems] = useState(projectCarts().slice(itemOffset, endOffset));
     const pageCount = Math.ceil(projectCarts().length / itemsPerPage);
     const handlePageClick = (event: { selected: number }) => {
-    const newOffset = (event.selected * itemsPerPage) % projectCarts().length;
-    setItemOffset(newOffset);
+        const newOffset = (event.selected * itemsPerPage) % projectCarts().length;
+        setItemOffset(newOffset);
     };
+    const handleShowMore = ()=>{
+        const slicedProjects = projectCarts().slice(0,currentItems.length + itemsPerPage)
+        setCurrentItems(slicedProjects)
+    }
     return (
         <section className="projects dark_text single_page">
             <div className="section_wrap">
@@ -46,9 +51,9 @@ export const ProjectsList = ({itemsPerPage}:IItemsPerPage) => {
                         previousLabel=" "
                         renderOnZeroPageCount={null}
                     />
-                    <a href="" className="btn_more">
+                    <button className="btn_more" onClick={handleShowMore}>
                         Показать еще
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
