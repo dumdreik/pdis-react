@@ -9,17 +9,27 @@ interface IItemsPerPage{
 
 export const ProjectsList = ({itemsPerPage}:IItemsPerPage) => {
     const [itemOffset, setItemOffset] = useState(0);
+    const [pageNum, setPageNum] = useState(0);
+    const [countShow, setCountShow] = useState(1);
     const endOffset = itemOffset + itemsPerPage;
-    //const currentItems = projectCarts().slice(itemOffset, endOffset);
     const [currentItems, setCurrentItems] = useState(projectCarts().slice(itemOffset, endOffset));
     const pageCount = Math.ceil(projectCarts().length / itemsPerPage);
+
     const handlePageClick = (event: { selected: number }) => {
         const newOffset = (event.selected * itemsPerPage) % projectCarts().length;
+        setPageNum(event.selected)
+        setCountShow(1);
         setItemOffset(newOffset);
+        setCurrentItems(projectCarts().slice(newOffset, newOffset + itemsPerPage));
     };
+
     const handleShowMore = ()=>{
-        const slicedProjects = projectCarts().slice(0,currentItems.length + itemsPerPage)
+        setCountShow(countShow+1)
+        const startShow = pageNum*itemsPerPage
+        const endShow = (pageNum+1)*itemsPerPage+itemsPerPage*countShow;
+        const slicedProjects = projectCarts().slice(startShow, endShow)
         setCurrentItems(slicedProjects)
+        setItemOffset(endOffset + itemsPerPage);
     }
     return (
         <section className="projects dark_text single_page">
